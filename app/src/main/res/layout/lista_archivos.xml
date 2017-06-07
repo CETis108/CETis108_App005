@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/lblNombreArchivo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="NOMBRE DEL ARCHIVO"
+            android:textColor="@color/nombreArchivo"
+            android:textSize="20dp" />
+        <TextView
+            android:id="@+id/lblFechaModificacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="FECHA MODIFICACION"
+            android:textColor="@color/fechaModificacion"
+            android:textSize="15dp" />
+        <TextView
+            android:id="@+id/lblTipo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TIPO"
+            android:textColor="@color/tipoArchivo"
+            android:textSize="15dp" />
+    </LinearLayout>
+
+</ScrollView>
