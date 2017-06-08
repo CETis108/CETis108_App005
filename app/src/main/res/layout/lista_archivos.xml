@@ -28,5 +28,4 @@
             android:textColor="@color/tipoArchivo"
             android:textSize="15dp" />
     </LinearLayout>
-
 </ScrollView>
