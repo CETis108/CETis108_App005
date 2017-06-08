@@ -56,6 +56,7 @@ public class Archivo {
         nameValuePairs.add(new BasicNameValuePair("nombre", nombre));
         nameValuePairs.add(new BasicNameValuePair("tipo", tipo));
         nameValuePairs.add(new BasicNameValuePair("ruta", ruta));
+
         try
         {
             HttpClient httpclient = new DefaultHttpClient();
@@ -96,7 +97,7 @@ public class Archivo {
 
             if(code==1)
             {
-                sRespuesta = "Archivo creado correctamente.";
+                sRespuesta = "Ubicación registrada";
             }
         }
         catch(Exception e)
