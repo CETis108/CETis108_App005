@@ -7,25 +7,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
-            android:id="@+id/lblNombreArchivo"
+            android:id="@+id/lblNombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="NOMBRE DEL ARCHIVO"
             android:textColor="@color/nombreArchivo"
             android:textSize="20dp" />
         <TextView
-            android:id="@+id/lblFechaModificacion"
+            android:id="@+id/lblRuta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="FECHA MODIFICACION"
-            android:textColor="@color/fechaModificacion"
+            android:text="RUTA"
+            android:textColor="@color/tipoArchivo"
             android:textSize="15dp" />
         <TextView
-            android:id="@+id/lblTipo"
+            android:id="@+id/lblFecha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TIPO"
-            android:textColor="@color/tipoArchivo"
+            android:text="FECHA"
+            android:textColor="@color/fechaModificacion"
             android:textSize="15dp" />
     </LinearLayout>
 </ScrollView>

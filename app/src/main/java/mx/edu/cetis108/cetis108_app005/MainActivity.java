@@ -1,7 +1,9 @@
 package mx.edu.cetis108.cetis108_app005;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import org.apache.http.impl.cookie.DateUtils;
@@ -16,17 +18,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Date myDate = new Date();
-        SimpleDateFormat sm = new SimpleDateFormat("yyyy-mm-dd");
-        String strDate = sm.format(myDate);
-        Date dt=new Date();
-        try {
-            dt = sm.parse(strDate);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        Archivo nuevoArchivo=new Archivo("http://innersoft.dnsalias.com:80/moviles/4ampr/15325061080038/archivo_crear.php?", "15325061080038", "archivoDesdeAndroid", "java", "C:/Users/Neil/", dt, dt);
-        nuevoArchivo.crearArchivo();
-        Toast.makeText(this, "Se intentó crear el archivo.", Toast.LENGTH_SHORT).show();
+    }
+    public void btnNuevoClick(View v){
+        Intent intent=new Intent(MainActivity.this, ArchivoEditar.class);
+        startActivity(intent);
+        finish();
     }
 }

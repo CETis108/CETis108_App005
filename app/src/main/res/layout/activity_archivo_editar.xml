@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="mx.edu.cetis108.cetis108_app005.ArchivoEditar">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <EditText
+            android:id="@+id/txtNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="NOMBRE DEL ARCHIVO"/>
+        <EditText
+            android:id="@+id/txtTipo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="TIPO DE ARCHIVO"/>
+        <EditText
+            android:id="@+id/txtRuta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="RUTA DEL ARCHIVO"/>
+        <EditText
+            android:id="@+id/txtTexto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Escriba aquí el contenido del archivo."/>
+        <Button
+            android:id="@+id/btnGuardar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="GUARDAR"
+            android:onClick="btnGuardar"/>
+    </LinearLayout>
+</ScrollView>

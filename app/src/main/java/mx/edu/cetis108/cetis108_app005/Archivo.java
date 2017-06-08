@@ -97,7 +97,7 @@ public class Archivo {
 
             if(code==1)
             {
-                sRespuesta = "Ubicación registrada";
+                sRespuesta = "Archivo creado.";
             }
         }
         catch(Exception e)
