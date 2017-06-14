@@ -1,6 +1,8 @@
 package mx.edu.cetis108.cetis108_app005;
 
+import android.content.Context;
 import android.util.Log;
+import android.webkit.WebView;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -15,8 +17,14 @@ import org.json.JSONObject;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Date;
+import java.sql.*;
 
 /**
  * Created by Neil on 07/06/2017.
@@ -28,6 +36,7 @@ public class Archivo {
     String nombre;
     String ruta;
     String tipo;
+    Contenido contenido;
     Date fechaCreacion;
     Date fechaModificacion;
 
@@ -35,9 +44,6 @@ public class Archivo {
     String result=null;
     String line=null;
     int code;
-    public Archivo(){
-
-    }
     public Archivo(String sUrl, String usuario, String nombre, String ruta, String tipo, Date fechaCreacion, Date fechaModificacion){
         this.sUrl=sUrl;
         this.usuario=usuario;
@@ -47,70 +53,21 @@ public class Archivo {
         this.fechaCreacion=fechaCreacion;
         this.fechaModificacion=fechaModificacion;
     }
-    public Archivo(String sUrl, String usuario, String nombre, String ruta, String tipo){
+    public Archivo(String sUrl, String usuario, String nombre, String ruta, String tipo, String texto){
         this.sUrl=sUrl;
         this.usuario=usuario;
         this.nombre=nombre;
         this.ruta=ruta;
         this.tipo=tipo;
+        this.contenido=new Contenido(usuario, nombre, tipo, ruta, texto);
     }
-    public String registrarArchivo()
+    public void registrarArchivo(WebView webAcceder, WebView webContenido)
     {
-        String sRespuesta = "";
-        ArrayList<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
+        /*webAcceder.getSettings().setJavaScriptEnabled(true);
+        webAcceder.getSettings().setDomStorageEnabled(true);
+        webAcceder.loadUrl("http://innersoft.dnsalias.com/moviles/4AMPR/15325061080038/archivo_crear.php?usuario=15325061080038&nombre="+nombre+"&ruta="+ruta+"&tipo="+tipo);
+        webContenido.loadUrl("http://innersoft.dnsalias.com/moviles/4AMPR/15325061080038/contenido_crear.php?usuario=15325061080038&nombre="+nombre+"&ruta="+ruta+"&tipo="+tipo+"&contenido="+contenido.texto);
+        */
 
-        nameValuePairs.add(new BasicNameValuePair("usuario", usuario));
-        nameValuePairs.add(new BasicNameValuePair("nombre", nombre));
-        nameValuePairs.add(new BasicNameValuePair("tipo", tipo));
-        nameValuePairs.add(new BasicNameValuePair("ruta", ruta));
-
-        try
-        {
-            HttpClient httpclient = new DefaultHttpClient();
-            HttpPost httppost = new HttpPost(sUrl);
-            httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
-            HttpResponse response = httpclient.execute(httppost);
-            HttpEntity entity = response.getEntity();
-            is = entity.getContent();
-            Log.e("pass 1", "connection success ");
-        }
-        catch(Exception e)
-        {
-            Log.e("Fail 1", e.toString());
-        }
-
-        try
-        {
-            BufferedReader reader = new BufferedReader
-                    (new InputStreamReader(is,"iso-8859-1"),8);
-            StringBuilder sb = new StringBuilder();
-            while ((line = reader.readLine()) != null)
-            {
-                sb.append(line + "\n");
-            }
-            is.close();
-            result = sb.toString();
-            Log.e("pass 2", "connection success ");
-        }
-        catch(Exception e)
-        {
-            Log.e("Fail 2", e.toString());
-        }
-
-        try
-        {
-            JSONObject json_data = new JSONObject(result);
-            code=(json_data.getInt("code"));
-
-            if(code==1)
-            {
-                sRespuesta = "Archivo creado.";
-            }
-        }
-        catch(Exception e)
-        {
-            Log.e("Fail 3", e.toString());
-        }
-        return sRespuesta;
     }
 }

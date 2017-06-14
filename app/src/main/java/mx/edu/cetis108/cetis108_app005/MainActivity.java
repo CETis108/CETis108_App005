@@ -27,11 +27,18 @@ import java.io.Reader;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.Statement;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.lang.*;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,19 +46,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ListView lstArchivos=(ListView)findViewById(R.id.lstArchivos);
-        String[]nombre=new String[12];
-        String[]ruta=new String[12];
-        String[]fecha=new String[12];
-        for(int i=0; i<nombre.length; i++) {
-            nombre[i] = "archivoNum" + String.valueOf(i + 1);
-            ruta[i] = "rutaDispositivo" + String.valueOf(i + 1);
-            fecha[i] = "2017-06-13";
-        }
-        MyAdapter adapter=new MyAdapter(this, nombre, ruta, fecha);
-        lstArchivos.setAdapter(adapter);
-    }
-    public void itemClick(){
+        ListView lstArchivos = (ListView) findViewById(R.id.lstArchivos);
 
     }
     public void btnNuevoClick(View v){

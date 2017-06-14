@@ -13,27 +13,35 @@
             android:id="@+id/txtNombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="NOMBRE DEL ARCHIVO"/>
+            android:hint="Nombre del archivo"/>
         <EditText
             android:id="@+id/txtTipo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="TIPO DE ARCHIVO"/>
+            android:hint="Tipo de archivo"/>
         <EditText
             android:id="@+id/txtRuta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="RUTA DEL ARCHIVO"/>
+            android:hint="Ruta del archivo"/>
         <EditText
             android:id="@+id/txtTexto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="ESCRIBA AQUÍ EL CONTENIDO."/>
+            android:hint="Escriba aquí el contenido..."/>
         <Button
             android:id="@+id/btnGuardar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="GUARDAR"
             android:onClick="btnGuardarClick"/>
+        <WebView
+            android:layout_width="0px"
+            android:layout_height="0px"
+            android:id="@+id/webAcceder"></WebView>
+        <WebView
+            android:layout_width="0px"
+            android:layout_height="0px"
+            android:id="@+id/webContenido"></WebView>
     </LinearLayout>
 </ScrollView>

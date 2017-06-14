@@ -11,17 +11,15 @@ public class Contenido {
     String nombre;
     String tipo;
     String ruta;
-    Date fecha;
     String texto;
     public Contenido(){
 
     }
-    public Contenido(String usuario, String nombre, String tipo, String ruta, Date fecha, String texto){
+    public Contenido(String usuario, String nombre, String tipo, String ruta, String texto){
         this.usuario=usuario;
         this.nombre=nombre;
         this.tipo=tipo;
         this.ruta=ruta;
-        this.fecha=fecha;
         this.texto=texto;
     }
 }
