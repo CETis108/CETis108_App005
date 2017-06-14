@@ -28,9 +28,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ListView lstArchivos=(ListView)findViewById(R.id.lstArchivos);
-        String[] nombre={"miClase", "quemiras"};
-        String[] ruta={"neil-pc", "micel"};
-        String[] fecha={"2017-06-13", "2017-06-06"};
+        String[]nombre=new String[12];
+        String[]ruta=new String[12];
+        String[]fecha=new String[12];
+        for(int i=0; i<nombre.length; i++) {
+            nombre[i] = "archivoNum" + String.valueOf(i + 1);
+            ruta[i] = "rutaDispositivo" + String.valueOf(i + 1);
+            fecha[i] = "2017-06-13";
+        }
         MyAdapter adapter=new MyAdapter(this, nombre, ruta, fecha);
         lstArchivos.setAdapter(adapter);
 
