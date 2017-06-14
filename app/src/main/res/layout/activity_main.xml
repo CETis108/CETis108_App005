@@ -14,7 +14,9 @@
         android:layout_height="438dp"
         android:layout_weight="0.42"
         tools:listitem="@layout/lista_archivos"
-        android:clickable="true"></ListView>
+        android:clickable="true"
+        android:backgroundTint="@color/colorAccent">
+    </ListView>
 
     <Button
         android:id="@+id/btnNuevo"

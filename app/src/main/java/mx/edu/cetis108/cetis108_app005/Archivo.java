@@ -47,7 +47,14 @@ public class Archivo {
         this.fechaCreacion=fechaCreacion;
         this.fechaModificacion=fechaModificacion;
     }
-    public String crearArchivo()
+    public Archivo(String sUrl, String usuario, String nombre, String ruta, String tipo){
+        this.sUrl=sUrl;
+        this.usuario=usuario;
+        this.nombre=nombre;
+        this.ruta=ruta;
+        this.tipo=tipo;
+    }
+    public String registrarArchivo()
     {
         String sRespuesta = "";
         ArrayList<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();

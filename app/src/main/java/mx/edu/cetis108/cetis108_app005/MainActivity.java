@@ -2,10 +2,13 @@ package mx.edu.cetis108.cetis108_app005;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Layout;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -13,8 +16,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import org.apache.http.impl.cookie.DateUtils;
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.w3c.dom.Text;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.io.UnsupportedEncodingException;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -38,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
         }
         MyAdapter adapter=new MyAdapter(this, nombre, ruta, fecha);
         lstArchivos.setAdapter(adapter);
+    }
+    public void itemClick(){
 
     }
     public void btnNuevoClick(View v){
