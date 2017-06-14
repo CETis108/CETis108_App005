@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimary">#b92e46</color>
+    <color name="colorPrimaryDark">#941a23</color>
     <color name="colorAccent">#FF4081</color>
     <color name="nombreArchivo">#a30909</color>
     <color name="fechaModificacion">#8f3c6a</color>

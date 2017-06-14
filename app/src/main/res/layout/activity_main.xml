@@ -12,8 +12,9 @@
         android:id="@+id/lstArchivos"
         android:layout_width="match_parent"
         android:layout_height="438dp"
-        android:layout_weight="0.42">
-    </ListView>
+        android:layout_weight="0.42"
+        tools:listitem="@layout/lista_archivos"></ListView>
+
     <Button
         android:id="@+id/btnNuevo"
         android:layout_width="match_parent"

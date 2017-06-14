@@ -28,7 +28,7 @@
             android:id="@+id/txtTexto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Escriba aquí el contenido del archivo."/>
+            android:hint="ESCRIBA AQUÍ EL CONTENIDO."/>
         <Button
             android:id="@+id/btnGuardar"
             android:layout_width="match_parent"
