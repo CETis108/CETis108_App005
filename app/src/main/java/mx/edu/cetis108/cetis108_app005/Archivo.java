@@ -1,30 +1,10 @@
 package mx.edu.cetis108.cetis108_app005;
 
-import android.content.Context;
-import android.util.Log;
 import android.webkit.WebView;
 
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
-import org.json.JSONObject;
 
-import java.io.BufferedReader;
 import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.Date;
-import java.sql.*;
 
 /**
  * Created by Neil on 07/06/2017.
@@ -32,24 +12,22 @@ import java.sql.*;
 
 public class Archivo {
     String sUrl;
-    String usuario;
+    String usuario="15325061080038";
     String nombre;
     String ruta;
     String tipo;
     Contenido contenido;
-    Date fechaCreacion;
-    Date fechaModificacion;
+    String fechaCreacion;
+    String fechaModificacion;
 
     InputStream is=null;
     String result=null;
     String line=null;
     int code;
-    public Archivo(String sUrl, String usuario, String nombre, String ruta, String tipo, Date fechaCreacion, Date fechaModificacion){
-        this.sUrl=sUrl;
-        this.usuario=usuario;
+    public Archivo(String nombre, String tipo, String ruta, String fechaCreacion, String fechaModificacion){
         this.nombre=nombre;
-        this.ruta=ruta;
         this.tipo=tipo;
+        this.ruta=ruta;
         this.fechaCreacion=fechaCreacion;
         this.fechaModificacion=fechaModificacion;
     }
